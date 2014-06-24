@@ -29,13 +29,14 @@ public class Map {
 
         placeEntrance();
 
-        // display full map:
-        for (int i = 0; i < fullMapSize; i++) {
+
+        // display full map, for debugging:
+        /*for (int i = 0; i < fullMapSize; i++) {
             for (int j = 0; j < fullMapSize; j++) {
                 System.out.print(grid[i][j].getRoomType().getAsciiMap());
             }
             System.out.println();
-        }
+        }*/
     }
 
     public void placeEntrance() {
