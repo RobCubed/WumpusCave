@@ -56,7 +56,9 @@ public class Movement {
     }
 
     public static void displayArea(Room[][] grid, int gridX, int gridY) {
-
+        StringBuffer stringBuffer = new StringBuffer("");
+        boolean winds = false;
+        boolean wumpus = false;
         for (int i = gridX - 1; i < gridX + 2; i++) {
             for (int j = gridY - 1; j < gridY + 2; j++) {
                 if (i >= 0 && i <= (grid.length - 1) && j >= 0
@@ -70,6 +72,13 @@ public class Movement {
                             System.out.print(grid[i][j].getRoomType()
                                     .getAsciiMap());
                         } else {
+                            if (grid[i][j].getRoomType().equals(RoomType.pit) && winds == false) {
+                                stringBuffer.append("You hear howling winds and feel the air rush past you. ");
+                                winds = true;
+                            } else if (grid[i][j].getRoomType().equals(RoomType.wumpus) && wumpus == false) {
+                                stringBuffer.append("You smell the stench of a Wumpus. ");
+                                wumpus = true;
+                            }
                             System.out.print("?");
                         }
                     }
@@ -77,6 +86,7 @@ public class Movement {
             }
             System.out.println();
         }
+        System.out.println(stringBuffer);
     }
 
     public static void processCommand(String command, Player player,
