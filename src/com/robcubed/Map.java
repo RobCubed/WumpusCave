@@ -132,7 +132,7 @@ public class Map {
                 grid[player.getLocationX()][player.getLocationY()]
                         .setExplored(true);
             } else {
-                System.out.println("Chomp. A wumpus eats your ass.");
+                System.out.println("Chomp. A wumpus swallows you whole.");
                 System.out.println("**** GAME OVER ****");
                 System.out.println("You scored " + player.getScore()
                         + " points!");
